@@ -23,7 +23,7 @@ export default function Home() {
       <Layout>
         <Main>
           <img />
-          new branch
+          new branch feature add
         </Main>
       </Layout>
     </>
