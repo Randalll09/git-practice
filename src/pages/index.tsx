@@ -23,7 +23,7 @@ export default function Home() {
       <Layout>
         <Main>
           <img />
-          conflic
+          new branch
         </Main>
       </Layout>
     </>
