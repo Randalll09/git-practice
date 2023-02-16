@@ -23,7 +23,7 @@ export default function Home() {
       <Layout>
         <Main>
           <img />
-          bugFix
+          "change on main"
         </Main>
       </Layout>
     </>
