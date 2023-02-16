@@ -4,14 +4,16 @@ import styled from 'styled-components';
 import Layout from '@/components/Layout';
 import { useQuery } from 'react-query';
 import { moviePopular } from '@/utils/axios';
+import { imgpath } from '@/utils/imgpath';
 
 const inter = Inter({ subsets: ['latin'] });
 
 const Main = styled.main``;
 
 export default function Home() {
-  const { data } = useQuery('Latest-movie', moviePopular);
+  const { data } = useQuery('Popular-movie', moviePopular);
   console.log(data);
+
   return (
     <>
       <Head>
@@ -22,9 +24,8 @@ export default function Home() {
       </Head>
       <Layout>
         <Main>
-          <ul>
-            <li></li>
-          </ul>
+          <img src={imgpath(data?.results[0].backdrop_path!)} />
+          new branch feature add
         </Main>
       </Layout>
     </>
