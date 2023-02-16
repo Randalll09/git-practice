@@ -23,7 +23,7 @@ export default function Home() {
       <Layout>
         <Main>
           <img />
-          "change on main"
+          new branch
         </Main>
       </Layout>
     </>
