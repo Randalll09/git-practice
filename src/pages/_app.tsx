@@ -1,5 +1,6 @@
 import { darkTheme } from '@/styles/theme';
 import type { AppProps } from 'next/app';
+import { QueryClientProvider, QueryClient } from 'react-query';
 
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
@@ -37,11 +38,14 @@ p,a,span{
 `;
 
 export default function App({ Component, pageProps }: AppProps) {
+  const query = new QueryClient();
   return (
     <>
       <ThemeProvider theme={darkTheme}>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <QueryClientProvider client={query}>
+          <Component {...pageProps} />
+        </QueryClientProvider>
       </ThemeProvider>
     </>
   );
