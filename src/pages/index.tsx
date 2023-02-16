@@ -2,12 +2,16 @@ import Head from 'next/head';
 import { Inter } from '@next/font/google';
 import styled from 'styled-components';
 import Layout from '@/components/Layout';
+import { useQuery } from 'react-query';
+import { moviePopular } from '@/utils/axios';
 
 const inter = Inter({ subsets: ['latin'] });
 
 const Main = styled.main``;
 
 export default function Home() {
+  const { data } = useQuery('Latest-movie', moviePopular);
+  console.log(data);
   return (
     <>
       <Head>

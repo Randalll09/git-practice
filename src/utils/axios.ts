@@ -32,17 +32,17 @@ export interface IReview {
   url: string;
 }
 
-export const movieLatest = async () => {
-  const res: IMovie[] = await axios.get(
-    `${baseUrl}movie/latest?api_key=${process.env.NEXT_MOVIE_API_KEY}`
+export const moviePopular = async () => {
+  const res: { results: IMovie[] } = await axios.get(
+    `${baseUrl}movie/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
   );
-  return res;
+  return res.results;
 };
 
 export const reviews = async (id: number) => {
   const res: { id: number; result: IReview[]; total_pages: number } =
     await axios.get(
-      `${baseUrl}movie/{movie_id}/reviews?api_key=${process.env.NEXT_MOVIE_API_KEY}`
+      `${baseUrl}movie/{movie_id}/reviews?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     );
   return res.result;
 };
