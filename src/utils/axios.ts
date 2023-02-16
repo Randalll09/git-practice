@@ -33,16 +33,20 @@ export interface IReview {
 }
 
 export const moviePopular = async () => {
-  const res: { results: IMovie[] } = await axios.get(
+  const res: {
+    data: {
+      results: IMovie[];
+    };
+  } = await axios.get(
     `${baseUrl}movie/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
   );
-  return res.results;
+  return res.data;
 };
 
 export const reviews = async (id: number) => {
-  const res: { id: number; result: IReview[]; total_pages: number } =
+  const res: { data: { id: number; result: IReview[]; total_pages: number } } =
     await axios.get(
       `${baseUrl}movie/{movie_id}/reviews?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     );
-  return res.result;
+  return res.data;
 };
