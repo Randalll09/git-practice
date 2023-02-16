@@ -39,7 +39,7 @@ const Layout = ({ children }: { children: any }) => {
   return (
     <Div>
       <Nav>
-        <h1>GitMovie 3</h1>
+        <h1>GitMovie bugFix</h1>
         <ul>
           <li>
             <Link href={'/movies'}>MOVIES</Link>
